@@ -183,6 +183,7 @@
     </center>
 
     <script>
+      // files dont update when publishing so its directly in the html
       const watermark = document.getElementById("watermark");
 
       watermark.addEventListener("mouseover", function() {
@@ -190,13 +191,15 @@
         watermark.style["margin-top"] = "-155px";
       });
 
+      // why not just use transitions?
+
       watermark.addEventListener("mouseout", function() {
         watermark.src = "/nationwatermark.png";
         watermark.style["margin-top"] = "-85px";
       });
 
       watermark.addEventListener("click", function() {
-        document.location = "/"
+        document.location = "/";
       });
     </script>
   </body>
