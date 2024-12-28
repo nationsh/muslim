@@ -1,0 +1,63 @@
+// this is so poorly made
+
+body {
+  font-family: Arial;
+  padding: 0;
+  margin: 0;
+  background-color: #262626;
+}
+
+header {
+  z-index: 5;
+  position: relative;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  background-color: #111111;
+  box-shadow: 0px 2px 4px #111111;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header, a {
+  color: white;
+}
+
+li::marker {
+  content: "";
+}
+
+.center {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#watermark {
+  position: absolute; transform: translate(50%, 50%) rotateZ(-4deg); margin-left: -70px; margin-top: -85px; cursor: pointer;
+}
+
+#youtubeDiv {
+  height: 400px; width: 1100px; background-color: #0F0F0F; border-radius: 15px; box-shadow: 2px 2px 4px #111111;
+}
+
+#youtubeDiv, iframe {
+  float: left; margin-top: 50; margin-left: 50; border-radius: 15px; border: none;
+}
+
+#youtubeDiv, .youtubeTextContent {
+  float: right; margin-right: 90; margin-top: 50; font-weight: bold;
+}
+
+#youtubeDiv, .youtubeInvite {
+  line-height: 5px; text-align: left; float: left; text-decoration: underline; color: #3EA6FF;
+}
