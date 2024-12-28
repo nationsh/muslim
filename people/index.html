@@ -74,12 +74,20 @@
       .personDiv, img {
         border-radius: 5px;
       }
+
+      #watermark {
+        position: absolute;
+        transform: translate(50%, 50%) rotateZ(-4deg);
+        margin-left: -70px;
+        margin-top: -85px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
     <div id="header">
       <header>
-        <img src="/nationwatermark.png" id="watermark" width="150" style="position: absolute; transform: translate(50%, 50%) rotateZ(-4deg); margin-left: -70px; margin-top: -85px; cursor: pointer;">    
+        <img src="/nationwatermark.png" id="watermark" width="150">    
         <nav>
           <ul>
             <li>
@@ -99,6 +107,14 @@
           <ul>
             <li>
               <a href="/people/" style="text-decoration: underline;">PEOPLE</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav>
+          <ul>
+            <li>
+              <a href="/archive/" style="text-decoration: underline;">ARCHIVE</a>
             </li>
           </ul>
         </nav>
@@ -152,6 +168,7 @@
     </center>
 
     <script>
+      // i hate you cache
       const watermark = document.getElementById("watermark");
 
       watermark.addEventListener("mouseover", function() {
