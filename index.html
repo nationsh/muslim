@@ -109,9 +109,14 @@
       const watermark = document.getElementById("watermark");
 
       watermark.addEventListener("mouseover", function() {
-        watermark.src = "/images/watermarkchange.gif"
-        watermark.style["margin-top"] = "-155px"
+        watermark.src = "/images/watermarkchange.gif";
+        watermark.style["margin-top"] = "-155px";
       });
+
+      watermark.addEventListener("mouseout", function() {
+        watermark.src = "/nationwatermark.png";
+        watermark.style["margin-top"] = "-85px";
+      }
     </script>
   </body>
 </html>
