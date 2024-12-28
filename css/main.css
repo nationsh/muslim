@@ -43,21 +43,40 @@ li::marker {
 }
 
 #watermark {
-  position: absolute; transform: translate(50%, 50%) rotateZ(-4deg); margin-left: -70px; margin-top: -85px; cursor: pointer;
+  position: absolute;
+  transform: translate(50%, 50%) rotateZ(-4deg);
+  margin-left: -70px;
+  margin-top: -85px;
+  cursor: pointer;
 }
 
 #youtubeDiv {
-  height: 400px; width: 1100px; background-color: #0F0F0F; border-radius: 15px; box-shadow: 2px 2px 4px #111111;
+  height: 400px;
+  width: 1100px;
+  background-color: #0F0F0F;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px #111111;
 }
 
 #youtubeDiv, iframe {
-  float: left; margin-top: 50; margin-left: 50; border-radius: 15px; border: none;
+  float: left;
+  margin-top: 50;
+  margin-left: 50;
+  border-radius: 15px;
+  border: none;
 }
 
 #youtubeDiv, .youtubeTextContent {
-  float: right; margin-right: 90; margin-top: 50; font-weight: bold;
+  float: right;
+  margin-right: 90;
+  margin-top: 50;
+  font-weight: bold;
 }
 
 #youtubeDiv, .youtubeInvite {
-  line-height: 5px; text-align: left; float: left; text-decoration: underline; color: #3EA6FF;
+  line-height: 5px;
+  text-align: left;
+  float: left;
+  text-decoration: underline;
+  color: #3EA6FF;
 }
