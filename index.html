@@ -170,6 +170,17 @@
     <script>
       // files dont update when publishing so its directly in the html
       const watermark = document.getElementById("watermark");
+      const triggerPeople = document.getElementById("hoverBuilding");
+
+      let max = 0;
+
+      triggerPeople.addEventListener("click", function() {
+        if (max < 1){
+          max += 1;
+
+          document.location = "/people/";
+        }
+      });
 
       watermark.addEventListener("mouseover", function() {
         watermark.src = "/images/watermarkchange.gif";
