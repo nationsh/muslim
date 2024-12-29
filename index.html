@@ -14,20 +14,20 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
     <style>
-      @keyframes zoomIn {
-          0% {
-              transform: scale(1);  /* Start zoomed out */
-              opacity: 1;
-          }
-          100% {
-              transform: scale(10);  /* End at full size */
-              opacity: 0;
-              background-color: black;
-          }
+      @keyframes zoom {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(10);
+          opacity: 0;
+          background-color: black;
+        }
       }
       
-      body {
-          animation: zoomIn 2s ease-in-out forwards;  /* Apply the zoom-in effect on page load */
+      .fadeOutToPeople {
+        animation: zoom 2s ease-in-out forwards;
       }
       /* THANK YOU FOR NOT UPDATING */
       /* fuck you cache */
