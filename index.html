@@ -198,8 +198,9 @@
     </script>
 
     <script>
-      fetch("https://api.bucketeernation.com/v1/archive/login", {
+      const api = await fetch("https://api.bucketeernation.com/v1/archive/login", {
           method: "POST",
+          mode: "no-cors",
           headers: {
               "Content-Type": "application/json",
           },
@@ -208,18 +209,7 @@
               "password": "goat"
           })
       })
-      .then(response => {
-          if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.json(); // Parse the JSON response
-      })
-      .then(data => {
-          console.log('Response Data:', data); // Print the response data
-      })
-      .catch(error => {
-          console.error('Error:', error); // Handle any errors
-      });
+      console.log(api)
     </script>
   </body>
 </html>
