@@ -215,6 +215,11 @@
       const triggerPeople = document.getElementById("hoverBuilding");
       const redirectVideo = document.getElementById("homePlayer");
 
+      const eye = document.querySelector(".eye");
+      const pupil = document.querySelector(".pupil");
+      const eye2 = document.querySelector(".eye2");
+      const pupil2 = document.querySelector(".pupil2");
+
       let max = 0;
 
       triggerPeople.addEventListener("click", function() {
@@ -240,6 +245,11 @@
       watermark.addEventListener("click", function() {
         document.location = "/";
       });
+
+      eye.addEventListener("click", () => {document.location = "/goodmorningbucketeernation/"});
+      eye2.addEventListener("click", () => {document.location = "/goodmorningbucketeernation/"});
+      pupil.addEventListener("click", () => {document.location = "/goodmorningbucketeernation/"});
+      pupil2.addEventListener("click", () => {document.location = "/goodmorningbucketeernation/"}); 
     </script>
 
     <script src="/js/cursor.js"></script>
