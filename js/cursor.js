@@ -64,13 +64,8 @@ function cursor() {
     width = window.innerWidth
     height = window.innerHeight
 
-    if (hasWrapperEl) {
-      canvas.width = element.clientWidth
-      canvas.height = element.clientHeight
-    } else {
-      canvas.width = width
-      canvas.height = height
-    }
+    canvas.width = width
+    canvas.height = height
   }
 
   function onTouchMove(e) {
