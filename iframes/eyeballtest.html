@@ -186,12 +186,12 @@
 
         document.addEventListener('mousemove', (event) => {
             const eyeRect = eye.getBoundingClientRect();
-            const eyeCenterX = eyeRect.left + eyeRect.width / 3;
-            const eyeCenterY = eyeRect.top + eyeRect.height / 3;
+            const eyeCenterX = eyeRect.left + eyeRect.width / 4;
+            const eyeCenterY = eyeRect.top + eyeRect.height / 4;
 
             const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
 
-            const pupilRadius = (eyeRect.width / 3) - (pupil.offsetWidth / 3);
+            const pupilRadius = (eyeRect.width / 4) - (pupil.offsetWidth / 4);
             const pupilX = Math.cos(angle) * pupilRadius;
             const pupilY = Math.sin(angle) * pupilRadius;
 
