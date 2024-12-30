@@ -11,8 +11,31 @@
   <body>
     <div style="align-items: center; display: flex; height: 100%; justify-content: center; left: 0; position: fixed; top: 0; width: 100%;">
       <img src="/images/goodmorning.png" width="512" height="512">
-      <img src="/images/eyeball.png" width="62" height="31" style="position: absolute; margin-left: 75px; margin-top: 10px;">
-      <img src="/images/eyeball.png" width="72" height="31" style="position: absolute; margin-left: -265px; margin-top: 20px;">
+      <img class="eyeball1" src="/images/eyeball.png" width="62" height="31" style="position: absolute; margin-left: 75px; margin-top: 10px;">
+      <img class="eyeball2" src="/images/eyeball.png" width="72" height="31" style="position: absolute; margin-left: -265px; margin-top: 20px;">
+
+      <script>
+        const eye = document.querySelector(".eyeball1");
+        const pupil = document.querySelector(".eyeball1");
+
+        const eye2 = document.querySelector(".eyeball2");
+        const pupil2 = document.querySelector(".eyeball2");
+
+        document.addEventListener("mousemove", () => {
+          const eyeRect = eye.getBoundingClientRect();
+          const eyeCenterX = eyeRect.left + eyeRect.width / 5;
+          const eyeCenterY = eyeRect.top + eyeRect.height / 5;
+
+          const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
+
+          const pupilRadius = (eyeRect.width / 5) - (pupil.offsetWidth / 5);
+          const pupilX = Math.cos(angle) * pupilRadius;
+          const pupilY = Math.sin(angle) * pupilRadius;
+
+          pupil.style.transform = `translate(-50%, -50%) translate(${pupilX}px, ${pupilY}px)`;
+          pupil2.style.transform = `translate(-50%, -50%) translate(${pupilX}px, ${pupilY}px)`;
+        });
+        </script>
     </div>
   </body>
 </html>
