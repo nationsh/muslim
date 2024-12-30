@@ -208,7 +208,7 @@
               "password": "goat"
           })
       })
-      .then(response => response.json())
+      .then(response => response.text())
       .then(data => {
         console.log('Response from Worker:', data);
       })
