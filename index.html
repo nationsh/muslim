@@ -170,7 +170,7 @@
         if (max < 1){
           max += 1;
 
-          redirectVideo.innerHTML = `<video autoplay width="100%" height="100%" onended="setTimeout(function() {document.location = '/people/';}, 3000);">
+          redirectVideo.innerHTML = `<video autoplay width="100%" height="100%" onended="document.location = '/people/';">
               <source src="/videos/SHUTUP.mp4" type="video/mp4">
           </video>`;
         }
