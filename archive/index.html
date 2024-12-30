@@ -34,19 +34,22 @@
       <div style="width: 500px; height: 350px; color: white; text-align: center; border: white solid; font-family: Arial;">
         <h1>SIGN IN TO ACCESS THIS SITE</h1>
         <br>
-        <input placeholder="USERNAME">
+        <input placeholder="USERNAME" id="user">
         <br>
         <br>
         <br>
-        <input placeholder="PASSWORD">
+        <input placeholder="PASSWORD" id="pass">
         <br>
         <br>
         <br>
-        <button onclick="login">ENTER</button>
+        <button onclick="login()">ENTER</button>
       </div>
     </div>
 
     <script>
+      const username = document.getElementById("user");
+      const password = document.getElementById("pass");
+      
       function login(){
         fetch("https://bucketeernation.com/archive", {
           method: "POST",
@@ -54,8 +57,8 @@
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            "username": "neerazam",
-            "password": "goat"
+            "username": username.value,
+            "password": password.value
           })
         })
         .then(response => {
