@@ -115,19 +115,20 @@
       }
 
 .eye {
-            width: 200px;
-            height: 200px;
-            background-color: white;
+            width: 158px;
+            height: 64px;
+            background: url(https://cdn.discordapp.com/attachments/1252718272701272129/1323208889889591347/image.png?ex=6773adcf&is=67725c4f&hm=7d1148c39e92a459497911cf5bdfedd7441b9f5ea07c3f48176b734b29180b18&);
+            background-size: 100% 100%;
             border-radius: 50%;
             position: relative;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
         }
 
         .pupil {
-            width: 60px;
-            height: 60px;
-            background-color: black;
-            border-radius: 50%;
+            width: 88px;
+            height: 47px;
+            background: url(https://cdn.discordapp.com/attachments/1252718272701272129/1323207191133556746/image.png?ex=6773ac3a&is=67725aba&hm=12104ee7631f5773ed8ac73a727c30bb4b90fdd7fae41551ce2906fab11e5c4a&);
+            background-size: 100% 100%;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -140,7 +141,7 @@
   <body>
     <div id="header" style="background: url(/images/redmosh.png);">
       <header>
-        <img src="/nationwatermark.png" id="watermark" width="150">    
+        <img src="/nationwatermark.png" id="watermark" width="150" style="margin-top: -85px;">    
         <nav>
           <ul>
             <li>
@@ -176,7 +177,7 @@
         <p style="margin-top: -36%; margin-left: -115px; width: 110px; height: 90px; cursor: url(/icons/cursorclick.png), auto; z-index: 999; position: relative;" id="hoverBuilding"></p>
 
 <div class="eye">
-        <div class="pupil"></div>
+        <div class="pupil" style="transform: translate(-50%, -50%) translate(31.3195px, -15.6234px);"></div>
     </div>
 
     <script>
@@ -185,8 +186,8 @@
 
         document.addEventListener('mousemove', (event) => {
             const eyeRect = eye.getBoundingClientRect();
-            const eyeCenterX = eyeRect.left + eyeRect.width / 2;
-            const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+            const eyeCenterX = eyeRect.left + eyeRect.width / 3;
+            const eyeCenterY = eyeRect.top + eyeRect.height / 3;
 
             const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
 
@@ -236,7 +237,8 @@
       });
     </script>
 
-    <script src="/js/cursor.js"></script><canvas width="1912" height="954" style="top: 0px; left: 0px; z-index: 99999; pointer-events: none; position: fixed;"></canvas>
+    <script src="/js/cursor.js"></script><canvas width="1912" height="954" style="top: 0px; left: 0px; z-index: 99999; pointer-events: none; position: fixed;"></canvas><canvas width="1912" height="954" style="top: 0px; left: 0px; z-index: 99999; pointer-events: none; position: fixed;"></canvas>
   
+
 
 </body></html>
