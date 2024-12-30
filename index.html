@@ -180,7 +180,7 @@
           const eye = document.querySelector(".eye");
           const pupil = document.querySelector(".pupil");
   
-          document.addEventListener("mousemove", function() => {
+          document.addEventListener("mousemove", () => {
             const eyeRect = eye.getBoundingClientRect();
             const eyeCenterX = eyeRect.left + eyeRect.width / 4;
             const eyeCenterY = eyeRect.top + eyeRect.height / 4;
