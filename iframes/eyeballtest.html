@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>follow</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .eye {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .pupil {
+            width: 60px;
+            height: 60px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="eye">
+        <div class="pupil"></div>
+    </div>
+
+    <script>
+        const eye = document.querySelector('.eye');
+        const pupil = document.querySelector('.pupil');
+
+        document.addEventListener('mousemove', (event) => {
+            const eyeRect = eye.getBoundingClientRect();
+            const eyeCenterX = eyeRect.left + eyeRect.width / 2;
+            const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+
+            const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
+
+            const pupilRadius = (eyeRect.width / 2) - (pupil.offsetWidth / 2);
+            const pupilX = Math.cos(angle) * pupilRadius;
+            const pupilY = Math.sin(angle) * pupilRadius;
+
+            pupil.style.transform = `translate(-50%, -50%) translate(${pupilX}px, ${pupilY}px)`;
+        });
+    </script>
+
+</body>
+</html>
