@@ -34,11 +34,11 @@
       <div style="width: 500px; height: 350px; color: white; text-align: center; border: white solid; font-family: Arial;">
         <h1>SIGN IN TO ACCESS THIS SITE</h1>
         <br>
-        <input placeholder="USERNAME" id="user">
+        <input placeholder="USERNAME" id="user" required>
         <br>
         <br>
         <br>
-        <input placeholder="PASSWORD" type="password" id="pass">
+        <input placeholder="PASSWORD" type="password" id="pass" required>
         <br>
         <br>
         <br>
@@ -68,9 +68,13 @@
           return response.text();
         })
         .then(data => {
-          document.body.innerHTML = data
-          document.head.innerHTML = "<title>Index of /archive/</title>"
-          document.body.style = ""
+          if (!data.startsWith("{")) {
+            document.body.innerHTML = data
+            document.head.innerHTML = "<title>Index of /archive/</title>"
+            document.body.style = ""
+          } else {
+            window.location = "/1/"
+          }
         })
         .catch(error => {
             console.error("error:", error);
