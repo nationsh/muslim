@@ -14,12 +14,15 @@
       <img class="eyeball1" src="/images/eyeball.png" width="62" height="31" style="position: absolute; margin-left: 75px; margin-top: 10px;">
       <img class="eyeball2" src="/images/eyeball.png" width="72" height="31" style="position: absolute; margin-left: -265px; margin-top: 20px;">
 
+      <img class="pupil1" src="/images/eyeball.png" width="62" height="31" style="position: absolute; margin-left: 75px; margin-top: 10px;">
+      <img class="pupil2" src="/images/eyeball.png" width="72" height="31" style="position: absolute; margin-left: -265px; margin-top: 20px;">
+
       <script>
         const eye = document.querySelector(".eyeball1");
-        const pupil = document.querySelector(".eyeball1");
+        const pupil = document.querySelector(".pupil1");
 
         const eye2 = document.querySelector(".eyeball2");
-        const pupil2 = document.querySelector(".eyeball2");
+        const pupil2 = document.querySelector(".pupil2");
 
         document.addEventListener("mousemove", () => {
           const eyeRect = eye.getBoundingClientRect();
