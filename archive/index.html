@@ -38,7 +38,7 @@
         <br>
         <br>
         <br>
-        <input placeholder="PASSWORD" id="pass">
+        <input placeholder="PASSWORD" type="password" id="pass">
         <br>
         <br>
         <br>
@@ -70,6 +70,7 @@
         .then(data => {
           document.body.innerHTML = data
           document.head.innerHTML = "<title>Index of /archive/</title>"
+          document.body.style = ""
         })
         .catch(error => {
             console.error("error:", error);
