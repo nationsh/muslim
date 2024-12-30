@@ -14,7 +14,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
     <style>
-      @keyframes zoom {
+      /*@keyframes zoom {
         0% {
           transform: scale(1);
           opacity: 1;
@@ -90,6 +90,10 @@
         margin-left: -70px;
         margin-top: -85px;
         cursor: url(/icons/cursorclick.png), auto;
+      }
+
+      #watermark:hover {
+        margin-top: -155px;
       }
       
       #youtubeDiv, iframe {
@@ -182,12 +186,12 @@
   
           document.addEventListener("mousemove", () => {
             const eyeRect = eye.getBoundingClientRect();
-            const eyeCenterX = eyeRect.left + eyeRect.width / 4;
-            const eyeCenterY = eyeRect.top + eyeRect.height / 4;
+            const eyeCenterX = eyeRect.left + eyeRect.width / 5;
+            const eyeCenterY = eyeRect.top + eyeRect.height / 5;
 
             const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
 
-            const pupilRadius = (eyeRect.width / 4) - (pupil.offsetWidth / 4);
+            const pupilRadius = (eyeRect.width / 5) - (pupil.offsetWidth / 5);
             const pupilX = Math.cos(angle) * pupilRadius;
             const pupilY = Math.sin(angle) * pupilRadius;
 
@@ -216,14 +220,12 @@
       });
 
       watermark.addEventListener("mouseover", function() {
-        watermark.style["margin-top"] = "-155px";
         watermark.src = "/images/watermarkchange.gif";
       });
 
       // why not just use transitions?
 
       watermark.addEventListener("mouseout", function() {
-        watermark.style["margin-top"] = "-85px";
         watermark.src = "/nationwatermark.png";
       });
 
