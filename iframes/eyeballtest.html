@@ -1,21 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>follow</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
+<html><head>
+    <title>HOME | BUCKETEER NATION</title>
 
-        .eye {
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="game">
+    <meta property="og:description" content="nation official site">
+    <meta name="description" content="nation official site">
+    <meta property="og:title" content="bucketeer nation">
+    <meta property="og:url" content="https://bucketeernation.com">
+    <meta property="og:image" content="https://bucketeernation.com/favicon.ico">
+    <meta property="twitter:image" content="https://bucketeernation.com/favicon.ico">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+      @keyframes zoom {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(10);
+          opacity: 0;
+          background-color: black;
+        }
+      }
+      
+      .fadeOutToPeople {
+        animation: zoom 2s ease-in-out forwards;
+      }
+      /* THANK YOU FOR NOT UPDATING */
+      /* fuck you cache */
+      body {
+        cursor: url(/icons/cursor.png), auto;
+        font-family: Arial;
+        padding: 0;
+        margin: 0;
+        background: url(/images/redmosh.png);
+      }
+
+      #header {
+        background-color: lightblue;
+      }
+      
+      header {
+        z-index: 5;
+        position: relative;
+        width: 100%;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        background-image: url(/images/headerhome.png);
+        background-size: 100% 100%;
+      }
+      
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        font-family: Arial; /* comic sans is so fucking gross on this site */
+        cursor: url(/icons/cursorclick.png), auto;
+      }
+
+      button {
+        cursor: url(/icons/cursorclick.png), auto;
+      }
+      
+      header, a {
+        color: white;
+      }
+      
+      li::marker {
+        content: "";
+      }
+      
+      .center {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      
+      #watermark {
+        position: absolute;
+        transform: translate(50%, 50%) rotateZ(-4deg);
+        margin-left: -70px;
+        margin-top: -85px;
+        cursor: url(/icons/cursorclick.png), auto;
+      }
+      
+      #youtubeDiv, iframe {
+        float: left;
+        margin-top: 50;
+        margin-left: 50;
+        border-radius: 15px;
+        border: none;
+      }
+      
+      #youtubeDiv, .youtubeTextContent {
+        float: right;
+        margin-right: 90;
+        margin-top: 50;
+        font-weight: bold;
+      }
+      
+      #youtubeDiv, .youtubeInvite {
+        line-height: 5px;
+        text-align: left;
+        float: left;
+        text-decoration: underline;
+        color: #3EA6FF;
+      }
+
+.eye {
             width: 200px;
             height: 200px;
             background-color: white;
@@ -35,11 +134,48 @@
             transform: translate(-50%, -50%);
             transition: transform 0.1s ease-out;
         }
-    </style>
-</head>
-<body>
 
-    <div class="eye">
+    </style>
+  </head>
+  <body>
+    <div id="header" style="background: url(/images/redmosh.png);">
+      <header>
+        <img src="/nationwatermark.png" id="watermark" width="150">    
+        <nav>
+          <ul>
+            <li>
+              <a style="visibility: hidden;">###########</a>
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <ul>
+            <li>
+              <a href="/" style="text-decoration: underline;">HOME</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav>
+          <ul>
+            <li>
+              <a href="/archive/">ARCHIVE</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <br>
+    <br>
+    <center style="background: url(/images/redmosh.png); height: 100%; width: 100%;">
+      <div style="height: 734px; width: 1073px; border-radius: 15px;" id="homePlayer">
+        <video autoplay="" loop="" muted="" width="100%" height="100%">
+            <source src="/videos/website.mp4" type="video/mp4">
+        </video>
+        <p style="margin-top: -36%; margin-left: -115px; width: 110px; height: 90px; cursor: url(/icons/cursorclick.png), auto; z-index: 999; position: relative;" id="hoverBuilding"></p>
+
+<div class="eye">
         <div class="pupil"></div>
     </div>
 
@@ -62,5 +198,45 @@
         });
     </script>
 
-</body>
-</html>
+      </div>
+    </center>
+
+    <script>
+      // files dont update when publishing so its directly in the html
+      const watermark = document.getElementById("watermark");
+      const triggerPeople = document.getElementById("hoverBuilding");
+      const redirectVideo = document.getElementById("homePlayer");
+
+      let max = 0;
+
+      triggerPeople.addEventListener("click", function() {
+        if (max < 1){
+          max += 1;
+
+          redirectVideo.innerHTML = `<video autoplay width="100%" height="100%" onended="document.location = '/people/';">
+              <source src="/videos/SHUTUP.mp4" type="video/mp4">
+          </video>`;
+        }
+      });
+
+      watermark.addEventListener("mouseover", function() {
+        watermark.style["margin-top"] = "-155px";
+        watermark.src = "/images/watermarkchange.gif";
+      });
+
+      // why not just use transitions?
+
+      watermark.addEventListener("mouseout", function() {
+        watermark.style["margin-top"] = "-85px";
+        watermark.src = "/nationwatermark.png";
+      });
+
+      watermark.addEventListener("click", function() {
+        document.location = "/";
+      });
+    </script>
+
+    <script src="/js/cursor.js"></script><canvas width="1912" height="954" style="top: 0px; left: 0px; z-index: 99999; pointer-events: none; position: fixed;"></canvas>
+  
+
+</body></html>
