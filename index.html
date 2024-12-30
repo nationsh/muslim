@@ -196,25 +196,5 @@
         document.location = "/";
       });
     </script>
-
-    <script>
-      const api = fetch("/archive", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-              "username": "neerazam",
-              "password": "goat"
-          })
-      })
-      .then(response => response.text())
-      .then(data => {
-        console.log('Response from Worker:', data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    </script>
   </body>
 </html>
