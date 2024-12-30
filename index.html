@@ -180,9 +180,15 @@
         <div class="eye" style="margin-top: -300px; margin-left: 800px;">
           <div class="pupil"></div>
         </div>
+        <div class="eye2" style="margin-top: -100px; margin-left: 800px;">
+          <div class="pupil2"></div>
+        </div>
         <script>
           const eye = document.querySelector(".eye");
           const pupil = document.querySelector(".pupil");
+
+          const eye2 = document.querySelector(".eye2");
+          const pupil2 = document.querySelector(".pupil2");
   
           document.addEventListener("mousemove", () => {
             const eyeRect = eye.getBoundingClientRect();
@@ -196,6 +202,7 @@
             const pupilY = Math.sin(angle) * pupilRadius;
 
             pupil.style.transform = `translate(-50%, -50%) translate(${pupilX}px, ${pupilY}px)`;
+            pupil2.style.transform = `translate(-50%, -50%) translate(${pupilX}px, ${pupilY}px)`;
           });
         </script>
       </div>
