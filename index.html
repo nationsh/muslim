@@ -179,6 +179,10 @@
 
       watermark.addEventListener("mouseover", function() {
         watermark.src = "/images/watermarkchange.gif";
+        for (i = 0; i < 30; i++) {
+          watermark.style["margin-top"] = "-" + String(Math.floor(Math.random() * 10)) + "px";
+        }
+
         watermark.style["margin-top"] = "-155px";
       });
 
