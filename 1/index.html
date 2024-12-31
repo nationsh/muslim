@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const titles = ["[", "]", "{", "}", ";", ":", "|", ",", ".", "<", ">", "/", "?", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "`", "~"];
+
+      for (i = 0; i < 100; i++) {
+          txt = "";
+          for (a = 0; a < 350; a++) {
+              txt = txt.concat(String(titles[Math.floor(Math.random() * titles.length)]));
+          }
+          
+          const marquee = document.createElement("marquee");
+          marquee.setAttribute("scrollamount", "25");
+          marquee.innerHTML = txt;
+          
+          document.body.appendChild(marquee);
+      }
+    </script>
+    <script>
+      const titles = ["[", "]", "{", "}", ";", ":", "|", ",", ".", "<", ">", "/", "?", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "`", "~"];
+      const title = document.querySelector("head > title");
+      let txt = "";
+      
+      function cTitle() {
+        txt = "";
+        for (i = 0; i < 200; i++) {
+            txt = txt.concat(String(titles[Math.floor(Math.random() * titles.length)]));
+        }
+        title.innerHTML = txt;
+        document.location.hash = txt
+
+        setTimeout(function(){
+          cTitle();
+        }, 50);
+      }
+      
+      cTitle();
+    </script>
+  </body>
+</html>
