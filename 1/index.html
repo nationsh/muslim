@@ -4,12 +4,12 @@
   </head>
   <body>
     <script>
-      const titles = ["[", "]", "{", "}", ";", ":", "|", ",", ".", "<", ">", "/", "?", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "`", "~"];
+      const titles2 = ["[", "]", "{", "}", ";", ":", "|", ",", ".", "<", ">", "/", "?", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "`", "~"];
 
       for (i = 0; i < 100; i++) {
           txt = "";
           for (a = 0; a < 350; a++) {
-              txt = txt.concat(String(titles[Math.floor(Math.random() * titles.length)]));
+              txt = txt.concat(String(titles2[Math.floor(Math.random() * titles2.length)]));
           }
           
           const marquee = document.createElement("marquee");
